@@ -583,12 +583,7 @@ class CameraConfig(FrigateBaseModel):
                 else self.ffmpeg.output_args.detect.split(" ")
             )
             ffmpeg_output_args = (
-                [
-                    "-r",
-                    str(self.detect.fps),
-                    "-s",
-                    f"{self.detect.width}x{self.detect.height}",
-                ]
+                []
                 + detect_args
                 + ffmpeg_output_args
                 + ["pipe:"]
